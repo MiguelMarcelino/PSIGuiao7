@@ -1,0 +1,17 @@
+extends layout
+
+block content
+
+  h1 Reader: #{reader.nome}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Books from Reader #{reader.nome}
+    
+    dl
+      each bookinstance in reader_books
+        dt
+          a #{bookinstance.imprint}
+
+      else
+        p This Reader doesn't have any books
